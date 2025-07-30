@@ -5,3 +5,19 @@
         margin: 100px 10px 0px 10px;
     }
 }
+@media screen and (min-width: 425px)
+{
+    .repos{
+        display: none;
+    }
+}
+@media screen and (min-width: 768px)
+{
+   .straight-line
+   {
+       display: none;
+   }
+   .card .straight-line{
+    display: none;
+   }
+}

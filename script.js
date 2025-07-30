@@ -1,6 +1,17 @@
-
-
+const card = document.querySelector(".profileCard")
+const hide = document.querySelector(".first-body")
+const link = document.querySelector(".link")
+const updateddate = document.querySelector(".updatedDate")
+const createddate = document.querySelector(".createdDate")
+const bioData = document.querySelector(".bioData")
+const repo = document.querySelector(".repo")
+const following = document.querySelector(".following")
+const username = document.querySelector(".userName")
+const followers = document.querySelector(".followers")  
+const companyname = document.querySelector(".companyName")
+const map = document.querySelector(".location")
 const show = document.querySelector(".showData")
+const profilename = document.querySelector(".profileName")
  const submit = document.getElementById("submit");
 const loadingSpinner = document.getElementById("loading-spinner");
 const image = document.getElementById("photo");
@@ -46,22 +57,35 @@ submit.addEventListener( "click",(event) =>
                     
                 },2000)
         }
-        // else if(profilebody.TypeError ==="Failed to fetch at GithubProfileInfo")
-        // {   
-        //     show.style.display = 'block';
-        //     show.textContent = "check";
-        //     loadingSpinner.style.display = 'none';
-        // }
+        else if(profilebody.message ==="404")
+        {   
+            show.style.display = 'block';
+            show.textContent = "check";
+            loadingSpinner.style.display = 'none';
+        }
     else
     {
-        
-        console.log(profilebody.avatar_url);
-        window.location.href = `profilecard.html?username=${userinput}`;
+        createddate.textContent = profilebody.created_at;
+        updateddate.textContent = profilebody.updated_at;
+        link.textContent = profilebody.html_url;
+        repo.textContent = profilebody.public_repos;
+        bioData.textContent = profilebody.bio;
+        following.textContent = profilebody.following;
+        username.textContent = profilebody.name;
+        followers.textContent = profilebody.followers;
+        companyname.textContent = profilebody.company;
+        map.textContent = profilebody.location; 
+        profilename.textContent = profilebody.login;
+        console.log(profilebody);
+        card.style.display = "block";
+        hide.style.display = "none";
+        image.src = profilebody.avatar_url;
         show.style.display = 'none';
         loadingSpinner.style.display = 'none';
     }
-    image.src = profilebody.avatar_url;
-    
+    link.setAttribute("href", profilebody.html_url);
+    link.style.color = "blue";
+    link.style.textDecoration = "none";
 }
 GithubProfileInfo(userinput)
 })
