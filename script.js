@@ -1,9 +1,10 @@
 const card = document.querySelector(".profileCard")
 const hide = document.querySelector(".first-body")
 const link = document.querySelector(".link")
+const id = document.querySelector(".id")
 const updateddate = document.querySelector(".updatedDate")
 const createddate = document.querySelector(".createdDate")
-const bioData = document.querySelector(".bioData")
+const bioData = document.querySelector(".bio")
 const repo = document.querySelector(".repo")
 const following = document.querySelector(".following")
 const username = document.querySelector(".userName")
@@ -23,7 +24,6 @@ submit.addEventListener( "click",(event) =>
 {
     const GithubfetchApi = await fetch(`https://api.github.com/users/${userinput}`);
     const profilebody = await GithubfetchApi.json()
-    show.textContent =userinput;
     show.style.color = "red" ;
     if(profilebody.message == "Not Found")
     {
@@ -57,14 +57,15 @@ submit.addEventListener( "click",(event) =>
                     
                 },2000)
         }
-        else if(profilebody.message ==="404")
+        else if(profilebody.message ==="forbiden")
         {   
             show.style.display = 'block';
-            show.textContent = "check";
+            show.textContent = "network forbiden";
             loadingSpinner.style.display = 'none';
         }
     else
     {
+        id.textContent = `ID: ${profilebody.id}`;
         createddate.textContent = profilebody.created_at;
         updateddate.textContent = profilebody.updated_at;
         link.textContent = profilebody.html_url;
@@ -75,8 +76,8 @@ submit.addEventListener( "click",(event) =>
         followers.textContent = profilebody.followers;
         companyname.textContent = profilebody.company;
         map.textContent = profilebody.location; 
-        profilename.textContent = profilebody.login;
-        console.log(profilebody);
+        profilename.textContent= profilebody.login;
+        profilename.style.textDecoration = "underline";
         card.style.display = "block";
         hide.style.display = "none";
         image.src = profilebody.avatar_url;

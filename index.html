@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,26 +9,30 @@
     <link rel="stylesheet" href="mobile.css">
     <link rel="stylesheet" href="profilecard.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Britannic:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body class="body">
     <div class="header-container container-sm first-body">
         <i class="fa-brands fa-github logo" style="color: #ffff;"></i>
         <header class="container">
-            <strong class="heading "><h1>GITHUB PROFILE FINDER</h1></strong>
-            
-          <input class="container-sm" type="text" name="user-input" id="user-input" placeholder="Enter Profile text-style" required>
-            
+            <strong class="heading ">
+                <h1>GITHUB PROFILE FINDER</h1>
+            </strong>
+
+            <input class="container-sm" type="text" name="user-input" id="user-input"
+                placeholder="Enter Profile Username" required>
+
             <button class="button" id="submit">
                 <div class="blob1"></div>
                 <div class="blob2"></div>
                 <div class="inner">Check Now</div>
-              </button>
+            </button>
             <div class="showData pt-3" style="display: none;"></div>
             <div id="loading-spinner" style="display:none; margin-top:20px;">
                 <div class="spinner-border text-light" role="status">
@@ -38,75 +43,73 @@
             <div class="footer-section d-flex justify-content-center mb-0">
                 <p class="footer">&copy; 2025, All right reserved, GITHIB PROFILE FINDER</p>
             </div>
-        </footer>  
+        </footer>
     </div>
 
-
-    <div class="header-containers container-sm  profileCard" style="display: none; width: 100%;">
-        <!-- <i class="fa-brands fa-github logo" style="color: #ffff;"></i> -->
-    
-        <div class="d-flex">
-            <div class="card hero justify-content-center d-flex" style=" background-color: transparent;">
-        <img id="photo" src="WhatsApp Image 2024-10-31 at 01.01.11_1f286e11.jpg" alt="" height="130px" width="130px">
-        <div class="d-flex">
-            <span class="label pt-2">Profile Name:</span>&nbsp;
-     <span class="text-style profileName pt-2">Shayan Sheikh</span>
-        </div>
-        <div class="d-flex">
-            <span class="label pt-2">location:</span>&nbsp;
-     <span class="text-style countryName pt-2">Pakistan, karachi</span>
-        </div>
-        <div class="d-flex">
-            <span class="label pt-2">Comapny:</span>&nbsp;
-     <span class="text-style companyName pt-2">Maksof international</span>
-        </div>
-        <div class="d-flex">
-            <span class="label pt-2">Name:</span>&nbsp;
-     <span class="text-style pt-2 userName">Shayan Sheikh dev</span>
-        </div>
-        <div class="d-flex">
-            <span class="label pt-2">Followers:</span>&nbsp;
-     <span class="text-style pt-2 followers">1</span>
-        </div>
-        <div class="d-flex">
-            <span class="label pt-2">following:</span>&nbsp;
-     <span class="text-style pt-2 following">0</span>
-        </div>
-        <div class="d-flex">
-            <span class="label pt-2">Repositories:</span>&nbsp;
-     <span class="text-style pt-2 repo">0</span>
-        </div>
-    </div>
-    <span class=" card straight-line" style="background-color: rebeccapurple;"></span>
-    <div class="card1 m-2" style="background: transparent;">
-        <div class="card2 m-2 p-2" style="background-color: black; color: white; ;">
-            <div class="d-flex flex-column">
-                <div class="label ">Bio:</div>
-         <span class="text-style bioData">Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ipsa dicta reiciendis temporibus consectetur, sed dolorum at repellendus? Consequatur, aut.</span>
+    <div class="profileCard" style="display: none;">
+        <div class="d-flex justify-content-center align-items-center">
+            <div class="header-containers ">
+                <i class="fa-brands fa-github logo mb-2" style="color: #ffff;"></i>
+                <div class="card hero d-flex p-3 mb-4 mt-0"
+                    style="background-color:transparent; border: none ; transform: translateY(-13px);">
+                    <h3 class="profileName" style="color: white; transform: translateY(-13px);">Shayan Sheikh</h3>
+                    <div class="d-flex ">
+                        <img id="photo" src="" alt="profile-picture" height="100px" width="100px">
+                        <span class="card p-1" style="background: transparent; border: none; width: 5.9xrem;">
+                            <span class="follower flex-column d-flex align-items-center">
+                                <span class="label">Followers</span>
+                                <span class="text-style followers">900</span>
+                            </span>
+                        </span>
+                        <span class="card p-1" style="background: transparent; border: none;  width: 6rem;">
+                            <span class="followings flex-column d-flex align-items-center">
+                                <span class="label">Followings</span>
+                                <span class="text-style following">0</span>
+                            </span>
+                        </span>
+                        <span class="card p-1" style="background: transparent; border: none;  width: 4rem;">
+                            <span class="repos flex-column d-flex align-items-center">
+                                <span class="label">Repos</span>
+                                <span class="text-style repo">46</span>
+                            </span>
+                        </span>
+                    </div>
+                    <div class="d-flex">
+                        <span class="label pt-2">Name:</span>&nbsp;
+                        <span class="text-style pt-2 userName">Shayan Sheikh</span>
+                    </div>
+                    <div class="d-flex">
+                        <span class="label pt-2">Location:</span>&nbsp;
+                        <span class="text-style pt-2 location">Pakistan, karachi</span>
+                    </div>
+                    <div class="d-flex">
+                        <span class="label pt-2">Company:</span>&nbsp;
+                        <span class="text-style pt-2 companyName">Maksof international</span>
+                    </div>
+                    <div class="d-flex">
+                        <span class="label pt-2">Created Date:</span>&nbsp;
+                        <span class="text-style pt-2 createdDate">Maksof international</span>
+                    </div>
+                    <div class="d-flex">
+                        <span class="label pt-2">Updated Date:</span>&nbsp;
+                        <span class="text-style pt-2 updatedDate">Maksof international</span>
+                    </div>
+                    <div class="d-flex text-wrap flex-column bio-card mt-2" style="width: 340px; overflow-: hidden;">
+                        <div class="label pt-2">Bio:</div>
+                        <div class="text-style pt-2 bio">Maksof international and my name is shayan shekhiyih</div>
+                    </div>
+                    <div class="d-flex text-wrap flex-column bio-card mt-2 " style="width: 340px; overflow-: hidden;">
+                        <div class="label pt-2">Github Profile Link:</div>
+                        <a class="text-style pt-2 link">Maksof international and my name is shayan shekhiyih</a>
+                    </div>
+                </div>
+                <p class="id" style="color: white;">ID: 2976435</p>
             </div>
         </div>
-        <div class="card3 m-2 p-2" style="background-color: black; color: white; ;">
-            <div class="d-flex flex-column">
-                <div class="label ">GitHub Profile Link: </div>
-         <a class="text-style link"></a>
-            </div>
-        </div>
-        <div class="card4 m-2 p-2 justify-content-between d-flex flex-row" style="background-color: black; color: white; ;">
-            <div class="d-flex flex-column">
-                <div class="label ">Created Date:</div>
-         <span class="text-style createdDate">2009-02-19T09:50:10Z</span>
-            </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <div class="d-flex flex-column">
-                <div class="label ">Updated Date:</div>
-         <span class="text-style updatedDate">2009-02-19T09:50:10Z</span>
-            </div>
-        </div>
-        
     </div>
-    </div>
-</div>
 
 
-    <script  src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

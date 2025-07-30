@@ -1,8 +1,17 @@
-@media screen and (max-width: 375px)
+@media screen and (min-width: 375px)
 {
     .header-container
     {
         margin: 100px 10px 0px 10px;
+    }
+    .hero
+    {
+      padding-left: 5px;
+      padding-right: 0px;
+    }
+    .header-containers
+    {
+        padding: 0 0px 0 0px;
     }
 }
 @media screen and (min-width: 425px)
