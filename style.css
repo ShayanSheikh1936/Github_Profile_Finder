@@ -174,7 +174,7 @@
 }
 
 .header-containers {
-  padding: 0 20px 0 20px;
+  padding: 0 10px 0 10px;
   margin: 25px 50px 0px 50px;
   display: flex;
   justify-content: center;
@@ -213,6 +213,7 @@
 .hero {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 #photo {
