@@ -1,21 +1,27 @@
-const card = document.querySelector(".profileCard")
-const hide = document.querySelector(".first-body")
-const link = document.querySelector(".link")
-const id = document.querySelector(".id")
-const updateddate = document.querySelector(".updatedDate")
-const createddate = document.querySelector(".createdDate")
-const bioData = document.querySelector(".bio")
-const repo = document.querySelector(".repo")
-const following = document.querySelector(".following")
-const username = document.querySelector(".userName")
-const followers = document.querySelector(".followers")  
-const companyname = document.querySelector(".companyName")
-const map = document.querySelector(".location")
-const show = document.querySelector(".showData")
+const card = document.querySelector(".profileCard");
+const hide = document.querySelector(".first-body");
+const link = document.querySelector(".link");
+const id = document.querySelector(".id");
+const updateddate = document.querySelector(".updatedDate");
+const createddate = document.querySelector(".createdDate");
+const bioData = document.querySelector(".bio");
+const repo = document.querySelector(".repo");
+const following = document.querySelector(".following");
+const username = document.querySelector(".userName");
+const followers = document.querySelector(".followers")  ;
+const companyname = document.querySelector(".companyName");
+const map = document.querySelector(".location");
+const show = document.querySelector(".showData");
 const profilename = document.querySelector(".profileName")
  const submit = document.getElementById("submit");
 const loadingSpinner = document.getElementById("loading-spinner");
 const image = document.getElementById("photo");
+document.addEventListener("keydown", (press) => {
+    const key = press.key;
+    if (key === "Enter") {
+        submit.click();
+    }
+})  
 submit.addEventListener( "click",(event) =>
 {
     let userinput = document.querySelector("#user-input").value;
@@ -25,6 +31,7 @@ submit.addEventListener( "click",(event) =>
     const GithubfetchApi = await fetch(`https://api.github.com/users/${userinput}`);
     const profilebody = await GithubfetchApi.json()
     show.style.color = "red" ;
+    
     if(profilebody.message == "Not Found")
     {
         setTimeout(() =>
@@ -57,10 +64,10 @@ submit.addEventListener( "click",(event) =>
                     
                 },2000)
         }
-        else if(profilebody.message ==="forbiden")
+        else if(!profilebody.ok)
         {   
             show.style.display = 'block';
-            show.textContent = "network forbiden";
+            show.textContent = "Network Forbidden (403)";
             loadingSpinner.style.display = 'none';
         }
     else
@@ -86,8 +93,8 @@ submit.addEventListener( "click",(event) =>
     }
     link.setAttribute("href", profilebody.html_url);
     link.style.color = "blue";
-    link.style.textDecoration = "none";
+    link.style.textDecoration = "none"; 
 }
+
 GithubProfileInfo(userinput)
 })
-
