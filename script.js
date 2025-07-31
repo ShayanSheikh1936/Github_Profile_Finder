@@ -66,9 +66,19 @@ submit.addEventListener( "click",(event) =>
         }
         else if(!profilebody.ok)
         {   
-            show.style.display = 'block';
-            show.textContent = "Network Forbidden (403)";
-            loadingSpinner.style.display = 'none';
+           setTimeout(() =>
+                {
+                    show.style.display = 'none';
+                    show.textContent ="Network Forbidden (403)";
+                
+                    loadingSpinner.style.display = 'block';
+                    if(show.textContent === "Network Forbidden (403)")
+                    {
+                        show.style.display = 'block';
+                        loadingSpinner.style.display = 'none';
+                    }
+                    
+                },2000)
         }
     else
     {
