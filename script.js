@@ -64,22 +64,7 @@ submit.addEventListener( "click",(event) =>
                     
                 },2000)
         }
-        else if(!profilebody.network)
-        {   
-           setTimeout(() =>
-                {
-                    show.style.display = 'none';
-                    show.textContent ="Network Forbidden (403)";
-                
-                    loadingSpinner.style.display = 'block';
-                    if(show.textContent === "Network Forbidden (403)")
-                    {
-                        show.style.display = 'block';
-                        loadingSpinner.style.display = 'none';
-                    }
-                    
-                },2000)
-        }
+   
     else
     {
         id.textContent = `ID: ${profilebody.id}`;
