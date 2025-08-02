@@ -64,7 +64,7 @@ submit.addEventListener( "click",(event) =>
                     
                 },2000)
         }
-        else if(profilebody.ok)
+        else if(!profilebody.network)
         {   
            setTimeout(() =>
                 {
