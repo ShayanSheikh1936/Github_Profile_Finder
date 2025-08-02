@@ -86,9 +86,7 @@ submit.addEventListener( "click",(event) =>
         show.style.display = 'none';
         loadingSpinner.style.display = 'none';
     }
-    link.setAttribute("href", profilebody.html_url);
-    link.style.color = "blue";
-    link.style.textDecoration = "none"; 
+    link.setAttribute("href", profilebody.html_url); 
 }
 
 GithubProfileInfo(userinput)
